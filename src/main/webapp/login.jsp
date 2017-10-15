@@ -1,3 +1,4 @@
+<%@page import="java.util.Date"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib uri="/WEB-INF/tlds/sql.tld" prefix="sql" %>
 <!doctype html>
@@ -19,7 +20,9 @@
 		<div>
 			<button type="submit">登录</button>
 		</div>
-	</form>
-</body> 
+	</form> 
+	<div>您于<%= new Date() %>访问该页面</div>
+	${1+1}
+</body>  
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
 </html>
