@@ -1,6 +1,5 @@
 <%@page import="java.util.Date"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
-<%@ taglib uri="/WEB-INF/tlds/sql.tld" prefix="sql" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,7 +20,6 @@
 			<button type="submit">登录</button>
 		</div>
 	</form> 
-	<div>当前用户总数为：${sql:getUserCount()}</div>
 </body>  
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
 </html>
