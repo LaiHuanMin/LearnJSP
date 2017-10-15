@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebFilter;
 /**
  * Servlet Filter implementation class FirstFilter
  */
+@WebFilter(urlPatterns="/login.jsp")
 public class FirstFilter implements Filter {
 	private int flux = 0;
 
