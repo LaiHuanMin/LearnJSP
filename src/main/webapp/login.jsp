@@ -20,6 +20,7 @@
 			<button type="submit">登录</button>
 		</div>
 	</form> 
+	<div>您目前已经访问了<%= request.getAttribute("flux") %>次</div>
 </body>  
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
 </html>
