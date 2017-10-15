@@ -4,6 +4,7 @@ package me.rmrf.tag;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.sql.*;
 
 public class Test {
@@ -11,10 +12,9 @@ public class Test {
 			throws ClassNotFoundException, SQLException, FileNotFoundException, IOException {
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/rmrf","root","123456");
-		Statement statement = conn.createStatement();
-		ResultSet executeQuery = statement.executeQuery("select * from user");
-		while(executeQuery.next()) {
-			System.out.println(executeQuery.getString("username")+executeQuery.getString("password"));
+		ResultSet resultSet = conn.createStatement().executeQuery("select count(id) as userCount from user");
+		while(resultSet.next()) {
+			System.out.println(resultSet.getString(1));
 		}
 	}
 

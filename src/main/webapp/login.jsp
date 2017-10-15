@@ -21,8 +21,7 @@
 			<button type="submit">登录</button>
 		</div>
 	</form> 
-	<div>您于<%= new Date() %>访问该页面</div>
-	${1+1}
+	<div>当前用户总数为：${sql:getUserCount()}</div>
 </body>  
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
 </html>
