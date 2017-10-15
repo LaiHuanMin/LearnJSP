@@ -21,6 +21,5 @@
 		</div>
 	</form>
 </body> 
-<sql:QueryColumn user="root" driver="com.mysql.jdbc.Driver" url="jdbc:mysql//localhost:3306/rmrf" pass="123456" sql="select * from user"/>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
 </html>

@@ -101,9 +101,7 @@ public class QueryTag extends SimpleTagSupport {
 			this.conn = DriverManager.getConnection(this.url,this.user,this.pass);
 			this.statement = conn.createStatement();
 			this.rs = statement.executeQuery(this.sql);
-			this.rsmd = rs.getMetaData();
-			int columnCount = rsmd.getColumnCount();
-			this.getJspContext().getOut().println("columnCount is "+columnCount);
+			this.getJspContext().getOut().println("当前用户总数：");
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
