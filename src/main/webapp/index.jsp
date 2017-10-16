@@ -1,24 +1,12 @@
-%@ page contentType="text/html; charset=UTF-8"%>
-<%@ page import="java.util.Map"%>
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<title>rmrf.me管理系统</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
 </head>
-<%
-	//鉴权
-	Map userInfo = (Map) session.getAttribute("userInfo");
-	try {
-		if (userInfo == null) {
-			throw new Exception("userInfo is null");
-		} else if ((Boolean) (userInfo.get("valid")) == false) {
-			throw new Exception("userInfo is not valid");
-		}
-	} catch (Exception exp) {
-		response.sendRedirect("/login.jsp");
-	}
-%>
 <body>
+    
 </body>
 </html>

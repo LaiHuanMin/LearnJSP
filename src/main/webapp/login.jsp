@@ -1,6 +1,7 @@
 <%@page import="java.util.Date"%>
 <%@ page import='java.sql.*'%>
 <%@ page contentType="text/html; charset=UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,7 +11,7 @@
 </head>
 <body>
 	<h1>欢迎登录</h1>
-	<form id="form" action="/_handleLogin.jsp" method="POST">
+	<form id="form" action="/LookForm.jsp" method="POST">
 		<div>
 			<input type="text" name="username" required placeholder="请输入用户名" />
 		</div>
@@ -32,9 +33,9 @@
 	while (resultSet.next()) {
 %>
 <%=resultSet.getString("username")%>
-
 <%
 	}
 %>
+<c:out value="100"></c:out>
 <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.js"></script>
 </html>
