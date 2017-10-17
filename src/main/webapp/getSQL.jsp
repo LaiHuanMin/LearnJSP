@@ -24,7 +24,8 @@
 		<sql:query var="result" dataSource="${ds}">
 		select * from ${tableItem} limit 5;
 		</sql:query>
-		<h1>${tableItem }</h1>
+		<h1>${tableItem }</h1>o
+		
 		<table border="1">
 			<thead>
 				<tr>
