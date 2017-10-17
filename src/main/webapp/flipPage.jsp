@@ -20,13 +20,16 @@
 		<jsp:setProperty property="beginIndex" name="table" value="0" />
 	</c:if>
 	<sql:query dataSource="${ds}" var="result"> 
-		select emp_no,birth_date,CONCAT(first_name," ",last_name) as `person name`,if(gender='m','man','female') as `sex`,hire_date from emp where CONCAT(first_name," ",last_name) like "${table.filter}" order by ${table.order == null ? "1" : table.order } limit ${table.beginIndex},10; 
+		select emp_no,birth_date,CONCAT(first_name," ",last_name) as `person name`,if(gender='m','man','female') as `sex`,hire_date from emp where CONCAT(first_name," ",last_name) like "%${table.filter}%" order by ${table.order == null ? "1" : table.order } limit ${table.beginIndex},10; 
 	</sql:query> 
 	<div>
 		<input type="text" id="filter" placeholder="Please input words" />
 		<button onclick="search()">search</button>
 	</div>
-	<br/>
+	<br/>	<c:if test="${table.filter == null }">
+		<jsp:setProperty property="filter" name="table" value="%"/>
+	</c:if>
+	
 	<table border="1">
 		<thead>
 			<tr>
@@ -62,15 +65,15 @@
 		if(currentPage == 0){
 			return;
 		}else{
-			location.href = "http://localhost:8080/flipPage.jsp?beginIndex="+(currentPage - 10) + "&order="+currentOrder+"&filter="+currentFilter;
+			location.href = "/flipPage.jsp?beginIndex="+(currentPage - 10) + "&order="+currentOrder+"&filter="+""+currentFilter+""
 		}
 	}
 	window.nextPage = function(){
-		location.href = "http://localhost:8080/flipPage.jsp?beginIndex="+(currentPage + 10) + "&order="+currentOrder+"&filter="+currentFilter
+		location.href = "/flipPage.jsp?beginIndex="+(currentPage + 10) + "&order="+currentOrder+"&filter="+""+currentFilter+""
 	}
 
 	window.search = function(){
 		var ipt = document.querySelector("#filter");
-		console.log(ipt.value);
+		location.href = "/flipPage.jsp?"+"&filter="+ipt.value.replace(/%/g,"")
 	}
 </script>
