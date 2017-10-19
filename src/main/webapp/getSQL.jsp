@@ -44,7 +44,7 @@
 				</c:forEach>
 			</tbody>
 		</table>
-		<hr/>
+		<hr />
 	</c:forEach>
 </body>
 </html>
