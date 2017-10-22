@@ -1,5 +1,11 @@
 <web-app>
 	<display-name>Archetype Created Web Application</display-name>
+	<filter>
+		<filter-name>FirstFilter</filter-name>
+		<display-name>FirstFilter</display-name>
+		<description></description>
+		<filter-class>me.rmrf.servlet.FirstFilter</filter-class>
+	</filter>
 	<listener>
 		<listener-class>me.rmrf.servlet.FirstListener</listener-class>
 	</listener>
