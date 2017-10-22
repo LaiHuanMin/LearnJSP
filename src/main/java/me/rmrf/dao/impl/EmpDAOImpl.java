@@ -2,6 +2,8 @@ package me.rmrf.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
 import java.util.List;
 
 import me.rmrf.dao.dao.IEmpDAO;
@@ -35,8 +37,16 @@ public class EmpDAOImpl implements IEmpDAO {
 		return flag;
 	}
 
+
 	@Override
-	public List<Emp> findAll(String keyWord) throws Exception {
+	public List<Emp> findAll() throws Exception {
+		List<Emp> list = new ArrayList<Emp>(); 
+		String sql = "select * from emp";
+		this.preparedStatement = this.connection.prepareStatement(sql);
+		ResultSet result = preparedStatement.executeQuery();
+		while(result.next()) {
+			System.out.println(result.getInt(1));
+		}
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -46,5 +56,12 @@ public class EmpDAOImpl implements IEmpDAO {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public List<Emp> findAll(String keyWord) throws Exception {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }

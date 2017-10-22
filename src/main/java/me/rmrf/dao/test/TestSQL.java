@@ -18,7 +18,7 @@ public class TestSQL {
 		DatabaseConnection dc = DatabaseFactory.getDatabaseConnection();
 		Emp emp = new Emp(1008800006,new Date(),new Date(),"lai","huanmin","M");
 		EmpDAOImpl daoImpl = new EmpDAOImpl(dc.getConnection());
-		System.out.println(daoImpl.doCreate(emp));;
+		System.out.println(daoImpl.findAll());
 	}
 	
 }

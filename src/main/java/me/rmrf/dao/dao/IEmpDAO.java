@@ -27,4 +27,6 @@ public interface IEmpDAO {
 	 * @throws Exception
 	 */
 	public Emp findById(int emp_no) throws Exception;
+
+	List<Emp> findAll() throws Exception;
 }
