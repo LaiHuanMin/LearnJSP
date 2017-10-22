@@ -3,7 +3,23 @@ package me.rmrf.dao.vo;
 import java.util.Date;
 
 public class Emp {
+	public Emp(int emp_no,Date hire_date,Date birth_date,String first_name,String last_name,String gender) {
+		this.birth_date = birth_date;
+		this.emp_no = emp_no;
+		this.gender = gender;
+		this.first_name = first_name;
+		this.hire_date = hire_date;
+		this.last_name = last_name;
+		// TODO Auto-generated constructor stub
+	}
 	private int emp_no;
+	private Date hire_date;
+	public Date getHire_date() {
+		return hire_date;
+	}
+	public void setHire_date(Date hire_date) {
+		this.hire_date = hire_date;
+	}
 	public int getEmp_no() {
 		return emp_no;
 	}

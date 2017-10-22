@@ -3,6 +3,7 @@ package me.rmrf.dao.dbc;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Date;
 
 public class DatabaseConnection implements IDatabaseConnection{
 	private String DB_USER = "root";
@@ -23,9 +24,7 @@ public class DatabaseConnection implements IDatabaseConnection{
 	public void close() throws SQLException {
 		this.connection.close();
 	}
-
 }
-
 
 interface IDatabaseConnection{
 	public Connection getConnection();
