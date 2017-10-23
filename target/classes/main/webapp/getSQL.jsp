@@ -9,7 +9,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 </head>
-<body>
+<body> 
 	<h1>I want to exec SQL</h1>
 	<sql:setDataSource driver="com.mysql.jdbc.Driver"
 		url="jdbc:mysql://localhost:3306/employees" user="root"

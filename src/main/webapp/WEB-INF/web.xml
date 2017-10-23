@@ -3,6 +3,14 @@
 	<listener>
 		<listener-class>me.rmrf.servlet.FirstListener</listener-class>
 	</listener>
+	<filter>
+		<filter-name>struts2</filter-name>
+		<filter-class>org.apache.Struts2.dispatcher.FilterDispatcher</filter-class>
+	</filter>
+	<filter-mapping>	
+		<filter-name>Struts2</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
 	<servlet>
 		<servlet-name>FirstServlet</servlet-name>
 		<display-name>FirstServlet</display-name>
